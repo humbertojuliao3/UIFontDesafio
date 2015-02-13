@@ -1,5 +1,5 @@
 //
-//  Jogador.h
+//  Pontos.h
 //  Projeto
 //
 //  Created by Liliane Bezerra Lima on 13/02/15.
@@ -7,14 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Jogador.h"
 
-@interface Jogador : NSObject
-
-- (instancetype)initWithNome:(NSString *)n;
-- (void)atualizarRecordes;
+@interface Pontos : NSObject
 
 
-@property NSString *nome;
-@property int pontuacao;
+- (void)recordes:(NSString *)n andPontos:(NSString *)pontos;
 
 @end
