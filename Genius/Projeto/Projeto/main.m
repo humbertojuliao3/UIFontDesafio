@@ -13,8 +13,10 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        Partida *a=[[Partida alloc] init];
+        [a jogo];
         
-        NSLog(@"BEM VINDO AO GENIUS \n");
+        /*NSLog(@"BEM VINDO AO GENIUS \n");
         NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
         NSString *nomeJogador;
         char nome[50];
@@ -31,8 +33,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Repita a sequência separando os itens com espaço:");
         scanf("@s", sequenciaInformada);
    
-//        Pontos *pont = [[Pontos alloc]init];
-//        [pont recordes:nomeJogador andPontos:@"113"];
+        Pontos *pont = [[Pontos alloc]init];
+        [pont recordes:nomeJogador andPontos:@"113"];*/
         
 //GENTE ESTAVA TENTANDO COLOCAR SALVAR EM BLOCO DE NOTAS, MAS SEMPRE QUE EU SALVO UM NOVO VALOR PARA IR NO TXT ELE SOBREPOE O QUE ESTAVA LA ANTES. CASO ALGUEM SAIBA COMO ARRUMAR ESSE PROBLEMA, ME AVISA POR FAVOR. SUGIRO USARMOS VETORES PARA ARMAZENAR AS PONTUACOES, O QUE ACHAM ?  
         

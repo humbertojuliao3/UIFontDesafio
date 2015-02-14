@@ -26,14 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		11BC7E8A1A8E8013008DC1F2 /* Pontos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pontos.h; sourceTree = "<group>"; };
-		11BC7E8B1A8E8013008DC1F2 /* Pontos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pontos.m; sourceTree = "<group>"; };
+		11BC7E8A1A8E8013008DC1F2 /* Pontos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pontos.h; sourceTree = "<group>"; usesTabs = 0; };
+		11BC7E8B1A8E8013008DC1F2 /* Pontos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pontos.m; sourceTree = "<group>"; usesTabs = 0; };
 		11BE75781A8E3ADA00E9EDFA /* Projeto */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Projeto; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BE757B1A8E3ADA00E9EDFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		11BE75821A8E3AED00E9EDFA /* Jogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jogador.h; sourceTree = "<group>"; };
-		11BE75831A8E3AED00E9EDFA /* Jogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jogador.m; sourceTree = "<group>"; };
-		25FDCA7C1A8E626700F23BD2 /* Partida.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partida.h; sourceTree = "<group>"; };
-		25FDCA7D1A8E626700F23BD2 /* Partida.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partida.m; sourceTree = "<group>"; };
+		11BE75821A8E3AED00E9EDFA /* Jogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jogador.h; sourceTree = "<group>"; usesTabs = 0; };
+		11BE75831A8E3AED00E9EDFA /* Jogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jogador.m; sourceTree = "<group>"; usesTabs = 0; };
+		25FDCA7C1A8E626700F23BD2 /* Partida.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partida.h; sourceTree = "<group>"; usesTabs = 0; };
+		25FDCA7D1A8E626700F23BD2 /* Partida.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partida.m; sourceTree = "<group>"; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +51,10 @@
 			isa = PBXGroup;
 			children = (
 				11BC7E8A1A8E8013008DC1F2 /* Pontos.h */,
-				11BC7E8B1A8E8013008DC1F2 /* Pontos.m */,
 				25FDCA7C1A8E626700F23BD2 /* Partida.h */,
-				25FDCA7D1A8E626700F23BD2 /* Partida.m */,
 				11BE75821A8E3AED00E9EDFA /* Jogador.h */,
+				11BC7E8B1A8E8013008DC1F2 /* Pontos.m */,
+				25FDCA7D1A8E626700F23BD2 /* Partida.m */,
 				11BE75831A8E3AED00E9EDFA /* Jogador.m */,
 				11BE757A1A8E3ADA00E9EDFA /* Projeto */,
 				11BE75791A8E3ADA00E9EDFA /* Products */,

@@ -9,3 +9,4 @@ itens a se discutir:
 -adicionar um método "jogo" à classe partida
 ( este método utiliza outros metodos da classe para gerar o jogo. se aprovado, eu coloco no arquivo principal,
 enquanto isso, vou deixar como comentário).
+-erros na execução
