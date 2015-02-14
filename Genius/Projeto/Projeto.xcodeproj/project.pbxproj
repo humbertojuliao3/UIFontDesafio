@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11BC7E8C1A8E8013008DC1F2 /* Pontos.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BC7E8B1A8E8013008DC1F2 /* Pontos.m */; };
 		11BE757C1A8E3ADA00E9EDFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BE757B1A8E3ADA00E9EDFA /* main.m */; };
 		11BE75841A8E3AED00E9EDFA /* Jogador.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BE75831A8E3AED00E9EDFA /* Jogador.m */; };
+		25FDCA7E1A8E626700F23BD2 /* Partida.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FDCA7D1A8E626700F23BD2 /* Partida.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11BC7E8A1A8E8013008DC1F2 /* Pontos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pontos.h; sourceTree = "<group>"; };
+		11BC7E8B1A8E8013008DC1F2 /* Pontos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pontos.m; sourceTree = "<group>"; };
 		11BE75781A8E3ADA00E9EDFA /* Projeto */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Projeto; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BE757B1A8E3ADA00E9EDFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11BE75821A8E3AED00E9EDFA /* Jogador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jogador.h; sourceTree = "<group>"; };
 		11BE75831A8E3AED00E9EDFA /* Jogador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jogador.m; sourceTree = "<group>"; };
+		25FDCA7C1A8E626700F23BD2 /* Partida.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partida.h; sourceTree = "<group>"; };
+		25FDCA7D1A8E626700F23BD2 /* Partida.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Partida.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,10 @@
 		11BE756F1A8E3ADA00E9EDFA = {
 			isa = PBXGroup;
 			children = (
+				11BC7E8A1A8E8013008DC1F2 /* Pontos.h */,
+				11BC7E8B1A8E8013008DC1F2 /* Pontos.m */,
+				25FDCA7C1A8E626700F23BD2 /* Partida.h */,
+				25FDCA7D1A8E626700F23BD2 /* Partida.m */,
 				11BE75821A8E3AED00E9EDFA /* Jogador.h */,
 				11BE75831A8E3AED00E9EDFA /* Jogador.m */,
 				11BE757A1A8E3ADA00E9EDFA /* Projeto */,
@@ -123,7 +133,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FDCA7E1A8E626700F23BD2 /* Partida.m in Sources */,
 				11BE75841A8E3AED00E9EDFA /* Jogador.m in Sources */,
+				11BC7E8C1A8E8013008DC1F2 /* Pontos.m in Sources */,
 				11BE757C1A8E3ADA00E9EDFA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +250,7 @@
 				11BE75811A8E3ADA00E9EDFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

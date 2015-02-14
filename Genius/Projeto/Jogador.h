@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Partida.h"
 
 @interface Jogador : NSObject
+{
+    Partida *partida;
+}
+
+- (instancetype)initWithNome:(NSString *)n;
+- (void)atualizarRecordes;
+
+
+@property NSString *nome;
+@property int pontuacao;
 
 @end

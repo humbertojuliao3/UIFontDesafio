@@ -10,4 +10,18 @@
 
 @implementation Jogador
 
+
+- (instancetype)initWithNome:(NSString *)n {
+    
+    self = [super init];
+    if (self) {
+        _nome = n;
+    }
+    return self;
+}
+
+- (void)atualizarRecordes{
+    _pontuacao+=1;
+    }
+
 @end
