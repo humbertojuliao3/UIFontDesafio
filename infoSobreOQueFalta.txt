@@ -1,8 +1,8 @@
 abaixo fica listado o que falta para terminar o projeto:
 
--Atualizar a posição do arquivo de recordes.
--modificar o main
--terminar classe partida
+-Atualizar a posição do arquivo de recordes.( )
+-modificar o main(*)
+-terminar classe partida( )
 
 itens a se discutir:
 
@@ -10,3 +10,4 @@ itens a se discutir:
 ( este método utiliza outros metodos da classe para gerar o jogo. se aprovado, eu coloco no arquivo principal,
 enquanto isso, vou deixar como comentário).
 -erros na execução
+-
