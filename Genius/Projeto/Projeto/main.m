@@ -14,6 +14,16 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Partida *a=[[Partida alloc] init];
+        
+        NSLog(@"BEM VINDO AO GENIUS \n");
+        NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
+        NSString *nomeJogador;
+        char nome[50];
+        scanf("%s", nome);
+        nomeJogador = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
+        
+        [a.player setNome:nomeJogador];
+        
         [a jogo];
         
         /*NSLog(@"BEM VINDO AO GENIUS \n");

@@ -14,7 +14,8 @@
     
     self = [super init];
     if (self) {
-        _sequencia = (nil);
+        NSMutableArray *a=[[NSMutableArray alloc] initWithCapacity:200];
+        _sequencia = a;
         _rodada = 0;
     }
     return self;
@@ -22,28 +23,28 @@
 
 - (void)aumentarSequencia {
     NSInteger numAleatorio;
-    numAleatorio = (rand() %3) + 1;
-    NSLog(@"%lu",numAleatorio);
-    [_sequencia addObject: [NSNumber numberWithInt:(int)numAleatorio]];
+    numAleatorio = (random() %3) + 1;
+    [_sequencia insertObject:[NSNumber numberWithInt:(int)numAleatorio] atIndex:_rodada];
     _rodada+=1;
 }
 
 - (NSMutableArray *)exibirSequencia {
     
-    for(NSInteger i = 0; i <=[_sequencia count]; i++) {
+    for(NSInteger i = 0; i <[_sequencia count]; i++) {
         
         //exibe um item da sequência por linha e espera alguns instantes entre a exibição de um e outro
-        
-        NSLog(@"%d", (int)[_sequencia objectAtIndex:i]);
+        NSNumber *a=[_sequencia objectAtIndex:i];
+        NSLog(@"%d ",a.intValue);
 //        [NSThread sleepForTimeInterval:1.0];
     }
     
     return _sequencia;
 }
 
-- (bool)verificarSequenciaInformada:(NSMutableArray *)s {
-    for (int i=0; i<(_rodada); i++) {
-        if ([s objectAtIndex:i] != [_sequencia objectAtIndex:i]){
+- (bool)verificarSequenciaInformada:(char [])entrada {
+    for (NSInteger i=0; i<(_rodada); i++) {
+        NSNumber *a=[NSNumber numberWithChar:entrada[i]];
+        if ([a isEqualToNumber: [_sequencia objectAtIndex:i]]==NO){
             return false;
         }
     }
@@ -52,19 +53,9 @@
 }
 
 -(void)jogo{
-
-    NSLog(@"BEM VINDO AO GENIUS \n");
-    NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
-    NSString *nomeJogador;
-    char nome[50];
-    scanf("%s", nome);
-    nomeJogador = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
-    [_player setNome:nomeJogador];
     
-//    Partida *p = [[Partida alloc]init];
     
     char sequenciaInformada[ [_sequencia count] ];
-    NSMutableArray *resp=[[NSMutableArray alloc] init];
     bool isJogo=true;
     
     for(;isJogo==true;){
@@ -75,11 +66,11 @@
         NSLog(@"Repita a sequência separando os itens com espaço:");
         scanf("%s", sequenciaInformada);
 
-            for (int i=0; i<[_sequencia count]; i++) {
-                [resp addObject:[NSString stringWithCString:&sequenciaInformada[i] encoding:NSUTF8StringEncoding]];
-            }
+//            for (int i=0; i<[_sequencia count]; i++) {
+//                [resp addObject:[NSString stringWithCString:&sequenciaInformada[i] encoding:NSUTF8StringEncoding]];
+//            }
         
-        isJogo=[self verificarSequenciaInformada: resp];
+        isJogo=[self verificarSequenciaInformada: sequenciaInformada];
     }
     NSLog(@"Fim de Jogo");
 }
