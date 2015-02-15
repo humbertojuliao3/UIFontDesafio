@@ -16,7 +16,7 @@
 @property int rodada;
 - (instancetype)init;
 - (void)aumentarSequencia;
-- (bool)verificarSequenciaInformada:(char [])entrada;
+- (bool)verificarSequenciaInformada:(NSMutableArray *)entrada;
 - (NSMutableArray *)exibirSequencia;
 - (void)jogo;
 @end

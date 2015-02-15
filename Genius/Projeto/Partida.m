@@ -41,10 +41,10 @@
     return _sequencia;
 }
 
-- (bool)verificarSequenciaInformada:(char [])entrada {
+- (bool)verificarSequenciaInformada:(NSMutableArray *)entrada {
     for (NSInteger i=0; i<(_rodada); i++) {
-        NSNumber *a=[NSNumber numberWithChar:entrada[i]];
-        if ([a isEqualToNumber: [_sequencia objectAtIndex:i]]==NO){
+//        NSNumber *a=[NSNumber numberWithChar:entrada[i]];
+        if ([[entrada objectAtIndex:i] isEqualToNumber: [_sequencia objectAtIndex:i]]==NO){
             return false;
         }
     }
@@ -55,23 +55,31 @@
 -(void)jogo{
     
     
-    char sequenciaInformada[ [_sequencia count] ];
+    NSMutableArray *resp=[[NSMutableArray alloc] initWithCapacity:200];
     bool isJogo=true;
     
     for(;isJogo==true;){
     
         [self aumentarSequencia];
         [self exibirSequencia];
+        
 //        [NSThread sleepForTimeInterval:1.0];
         NSLog(@"Repita a sequência separando os itens com espaço:");
-        scanf("%s", sequenciaInformada);
+        int a;
+//        scanf("%i",&a);
+        for (int i=0; i<_rodada; i++) {
+            NSLog(@"entre com o %i-ésimo numero",(i+1));
+            scanf("%i",&a);
+            [resp insertObject:[NSNumber numberWithInt:(int)a] atIndex:i];
+        }
 
 //            for (int i=0; i<[_sequencia count]; i++) {
 //                [resp addObject:[NSString stringWithCString:&sequenciaInformada[i] encoding:NSUTF8StringEncoding]];
 //            }
         
-        isJogo=[self verificarSequenciaInformada: sequenciaInformada];
+        isJogo=[self verificarSequenciaInformada: resp];
     }
+    NSLog(@"Você errou!!!");
     NSLog(@"Fim de Jogo");
 }
 @end
