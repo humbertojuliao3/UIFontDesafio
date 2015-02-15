@@ -7,6 +7,7 @@
 //
 
 #import "Partida.h"
+#include <stdlib.h>
 
 @implementation Partida
 
@@ -63,7 +64,8 @@
         [self aumentarSequencia];
         [self exibirSequencia];
         
-//        [NSThread sleepForTimeInterval:1.0];
+        [NSThread sleepForTimeInterval:4.0];
+        NSLog(@"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         NSLog(@"Repita a sequência separando os itens com espaço:");
         int a;
 //        scanf("%i",&a);
@@ -78,6 +80,11 @@
 //            }
         
         isJogo=[self verificarSequenciaInformada: resp];
+//        NSNumber *clear=[[NSNumber alloc] init];
+//        [clear ];
+//        for (int i=0; i<_rodada; i++) {
+//            [resp insertObject: atIndex:i];
+//        }
     }
     NSLog(@"Você errou!!!");
     NSLog(@"Fim de Jogo");
