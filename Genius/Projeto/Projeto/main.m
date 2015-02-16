@@ -21,6 +21,9 @@ int main(int argc, const char * argv[]) {
         char nome[50];
         scanf("%s", nome);
         nomeJogador = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
+
+        
+        NSLog(@"START");
         
         [a.player setNome:nomeJogador];
         
