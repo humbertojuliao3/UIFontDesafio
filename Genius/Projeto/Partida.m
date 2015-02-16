@@ -88,6 +88,9 @@
     }
     NSLog(@"Você errou!!!");
     NSLog(@"Fim de Jogo");
+    [NSThread sleepForTimeInterval:1.0];
+    [self limpar];
+    [self menu];
 }
 
 -(void)limpar
@@ -96,6 +99,43 @@
     NSAppleScript *lClearDisplay = [[NSAppleScript alloc] initWithSource:@"tell application \"System Events\"\n \ keystroke \"k\" using command down\n \ end tell "];
     NSDictionary *errorInfo; [lClearDisplay executeAndReturnError:&errorInfo];
 }
+
+
+-(void)menu
+{
+    int a;
+    NSLog(@"1 - INICIAR JOGO");
+    NSLog(@"2 - PONTUACAO");
+    scanf("%i",&a);
+    
+    if (a == 1)
+    {
+        [self limpar];
+        NSLog(@"START");
+        [self jogo];
+    }
+    
+    if (a == 2)
+    {
+        [self limpar];
+        [self pontos];
+    }
+    
+    
+}
+
+-(void)pontos
+{
+    int a;
+    NSLog(@"FALTA IMPLEMENTAR");
+    NSLog(@" 1 - Voltar");
+    scanf("%i",&a);
+    if (a == 1) {
+        [self limpar];
+        [self menu];
+    }
+}
+
 
 
 

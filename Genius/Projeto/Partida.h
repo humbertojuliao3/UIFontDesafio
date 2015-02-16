@@ -20,4 +20,6 @@
 - (NSMutableArray *)exibirSequencia;
 - (void)jogo;
 -(void)limpar;
+-(void)menu;
+-(void)pontos;
 @end

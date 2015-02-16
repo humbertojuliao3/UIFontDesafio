@@ -13,6 +13,8 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        int escolha;
+        
         Partida *a=[[Partida alloc] init];
         
         NSLog(@"BEM VINDO AO GENIUS \n");
@@ -22,12 +24,17 @@ int main(int argc, const char * argv[]) {
         scanf("%s", nome);
         nomeJogador = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
 
-        [a limpar];
-        NSLog(@"START");
+     //  [a limpar];
+//        
+//        NSLog(@"1 - INICIAR JOGO");
+//        NSLog(@"2 - PONTUACAO");
+//        scanf("%i",&escolha);
         
+        
+        [a menu];
         [a.player setNome:nomeJogador];
         
-        [a jogo];
+       // [a jogo];
         
         /*NSLog(@"BEM VINDO AO GENIUS \n");
         NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
