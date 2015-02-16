@@ -26,8 +26,7 @@
 
 
 - (void)aumentarSequencia {
-    NSInteger numAleatorio;
-    numAleatorio = (random() %3) + 1;
+    NSInteger numAleatorio = (arc4random() %3) + 1;
     [_sequencia insertObject:[NSNumber numberWithInt:(int)numAleatorio] atIndex:_rodada];
     _rodada+=1;
 }
@@ -64,7 +63,7 @@
         [self aumentarSequencia];
         [self exibirSequencia];
         
-        [NSThread sleepForTimeInterval:3.0];
+        [NSThread sleepForTimeInterval:1.0];
         // NSLog(@"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         [self limpar];
         NSLog(@"Repita a sequência separando os itens com espaço:");
@@ -79,7 +78,6 @@
         //                [resp addObject:[NSString stringWithCString:&sequenciaInformada[i] encoding:NSUTF8StringEncoding]];
         //            }
         isJogo=[self verificarSequenciaInformada: resp];
-        [self limpar];
         //        NSNumber *clear=[[NSNumber alloc] init];
         //        [clear ];
         //        for (int i=0; i<_rodada; i++) {
@@ -89,13 +87,10 @@
     NSLog(@"Você errou!!!");
     NSLog(@"Fim de Jogo");
     [NSThread sleepForTimeInterval:1.0];
-    [self limpar];
     [self menu];
 }
 
--(void)limpar
-
-{
+-(void)limpar{
     NSAppleScript *lClearDisplay = [[NSAppleScript alloc] initWithSource:@"tell application \"System Events\"\n \ keystroke \"k\" using command down\n \ end tell "];
     NSDictionary *errorInfo; [lClearDisplay executeAndReturnError:&errorInfo];
 }
@@ -127,7 +122,7 @@
 -(void)pontos
 {
     int a;
-    NSLog(@"FALTA IMPLEMENTAR");
+    NSLog(@"%d",_rodada * 100);
     NSLog(@" 1 - Voltar");
     scanf("%i",&a);
     if (a == 1) {
