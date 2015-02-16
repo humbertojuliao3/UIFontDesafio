@@ -19,4 +19,5 @@
 - (bool)verificarSequenciaInformada:(NSMutableArray *)entrada;
 - (NSMutableArray *)exibirSequencia;
 - (void)jogo;
+-(void)limpar;
 @end

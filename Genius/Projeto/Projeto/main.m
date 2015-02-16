@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
         scanf("%s", nome);
         nomeJogador = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
 
-        
+        [a limpar];
         NSLog(@"START");
         
         [a.player setNome:nomeJogador];
