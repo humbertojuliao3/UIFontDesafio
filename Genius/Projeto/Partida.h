@@ -16,8 +16,10 @@
 @property int rodada;
 @property int pontuacao;
 @property int jogadores;
+@property int posicao;
 @property NSString *nome;
-@property NSMutableDictionary *armazena;
+@property NSMutableArray *armazena;
+@property NSMutableArray *jogador;
 
 -(void)teste;
 
@@ -29,6 +31,6 @@
 -(void)limpar;
 -(void)menu;
 -(void)pontos;
--(void)inicio;
+-(NSString *)inicio;
 -(void)sobre;
 @end

@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
         Partida *a=[[Partida alloc] init];
         
         
-        [a inicio];
+        [a menu];
         
 //            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 //            

@@ -18,12 +18,15 @@
 
     self = [super init];
     if (self) {
-        NSMutableArray *a=[[NSMutableArray alloc] initWithCapacity:200];
+        NSMutableArray *a = [[NSMutableArray alloc] initWithCapacity:200];
         _sequencia = a;
         _rodada = 0;
         _pontuacao = 0;
-        _armazena= [NSMutableDictionary dictionary];
-        
+        NSMutableArray *b = [[NSMutableArray alloc] initWithCapacity:200];
+        _armazena = b;
+        NSMutableArray *c = [[NSMutableArray alloc] initWithCapacity:200];
+        _jogador = c;
+        _posicao = 0;
     }
     return self;
 }
@@ -91,6 +94,11 @@
     NSLog(@"Você errou!!!");
     NSLog(@"Fim de Jogo");
     _pontuacao = _rodada * 100;
+    [self inicio];
+    [_jogador insertObject: _nome atIndex:_posicao];
+    [_jogador insertObject: [NSNumber numberWithInt:(int)_pontuacao]atIndex:_posicao];
+    [_armazena insertObject: _jogador atIndex: _posicao];
+    _posicao ++;
     _rodada = 0;
     [_sequencia removeAllObjects];
     [NSThread sleepForTimeInterval:1.0];
@@ -107,36 +115,63 @@
 -(void)menu
 {
     int a;
-    NSLog(@"1 - Iniciar o jogo");
-    NSLog(@"2 - Pontuacao");
-    NSLog(@"3 - Mudar Jogador");
-    NSLog(@"4 - Sobre");
-    scanf("%i",&a);
     
-    if (a == 1)
-    {
-        [self limpar];
-        NSLog(@"START");
-        [self jogo];
-    }
+    do{
+        NSLog(@"1 - Iniciar o jogo");
+        NSLog(@"2 - Pontuacao");
+        NSLog(@"3 - Mudar Jogador");
+        NSLog(@"4 - Sobre");
+        NSLog(@"0 - Sair");
+        scanf("%i",&a);
+        switch (a){
+            case 1:
+                [self limpar];
+                NSLog(@"START");
+                [self jogo];
+                break;
+            case 2:
+                [self limpar];
+                [self pontos];
+                break;
+            case 3:
+                [self limpar];
+                [self inicio];
+                break;
+            case 4:
+                [self limpar];
+                [self sobre];
+                break;
+            case 0:
+                NSLog(@"Obrigado por jogar MacGeniusMobile");
+                break;
+            default: NSLog(@"Digite um valor válido.");
+        }
+    }while (a != 0);
     
-    if (a == 2)
-    {
-        [self limpar];
-        [self teste];
-    }
-    
-    if(a ==3)
-    {
-        [self limpar];
-        [self inicio];
-    }
-    
-    if(a ==4)
-    {
-        [self limpar];
-        [self sobre];
-    }
+//    if (a == 1)
+//    {
+//        [self limpar];
+//        NSLog(@"START");
+//        [self jogo];
+//    }
+//    
+//    if (a == 2)
+//    {
+//        [self limpar];
+//        [self teste];
+//    }
+//    
+//    if(a ==3)
+//    {
+//        [self limpar];
+//        [self inicio];
+//    }
+//    
+//    if(a ==4)
+//    {
+//        [self limpar];
+//        [self sobre];
+//    }
     
 }
 
@@ -147,7 +182,7 @@
     [_player atualizarRecordes];
     
     int a;
-    NSLog(@" %d", _pontuacao);
+    NSLog(@" %@", _armazena);
     [self teste];
     NSLog(@" 1 - Voltar");
     scanf("%i",&a);
@@ -158,16 +193,15 @@
     }
 }
 
--(void)inicio
+-(NSString *)inicio
 {
-    NSLog(@"BEM VINDO AO GENIUS \n");
-    NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
+    NSLog(@"Insira o nome do Jogador:");
    // NSString *nomeJogador;
     char nome[50];
     scanf("%s", nome);
     _nome = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
    // NSLog(@"Nome e: %@",_nome);
-    [self menu];
+    return _nome;
 }
 
 -(void)sobre
@@ -185,28 +219,29 @@
 
 -(void)teste
 {
-    int a;
-    NSString *muda, *vetorNome [20], *vetorPontos[20];
-    muda = [NSString stringWithFormat:@"%d",_pontuacao];
-    
-    vetorNome[1] = _nome;
-    vetorPontos[1] = muda;
     
     
-    
-    
-    [_armazena setObject:vetorPontos[1] forKey:vetorNome[1]];
-
-     NSString *aString = [_armazena objectForKey:vetorNome[1]];
-    NSLog(@"Pontuacao = %@", aString);
-    
-    NSLog(@"\n 1 - Voltar");
-    scanf("%i",&a);
-    if (a == 1) {
-        [self limpar];
-        [self menu];
-
-    }
+//    int a;
+//    
+//    
+////    NSString *muda, *vetorNome [10], *vetorPontos[10];
+////    muda = [NSString stringWithFormat:@"%d",_pontuacao];
+////    
+////    vetorNome[1] = _nome;
+////    vetorPontos[1] = muda;
+//    
+////    [_armazena setObject:vetorPontos[1] forKey:vetorNome[1]];
+////
+////     NSString *aString = [_armazena objectForKey:vetorNome[1]];
+////    NSLog(@"Pontuacao = %@", aString);
+//    
+//    NSLog(@"\n 1 - Voltar");
+//    scanf("%i",&a);
+//    if (a == 1) {
+//        [self limpar];
+//        [self menu];
+//
+//    }
     
 }
 
