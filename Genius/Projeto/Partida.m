@@ -50,7 +50,7 @@
             return false;
         }
     }
-    [_player atualizarRecordes];
+   // [_player atualizarRecordes];
     return true;
     
 }
@@ -141,11 +141,16 @@
 
 -(void)pontos
 {
+    
+   _player = [[Jogador alloc] initWithNome:_nome andPonto:_pontuacao];
+    [_player atualizarRecordes];
+    
     int a;
     NSLog(@" %d", _pontuacao);
     NSLog(@" 1 - Voltar");
     scanf("%i",&a);
-    if (a == 1) {
+    if (a == 1)
+    {
         [self limpar];
         [self menu];
     }

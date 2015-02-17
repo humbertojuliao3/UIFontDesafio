@@ -10,7 +10,9 @@
 
 @interface Jogador : NSObject
 
-- (instancetype)initWithNome:(NSString *)n;
+//- (instancetype)initWithNome:(NSString *)n;
+- (instancetype)initWithNome:(NSString *)n andPonto:(int)p;
+
 - (void)atualizarRecordes;
 
 

@@ -11,17 +11,22 @@
 @implementation Jogador
 
 
-- (instancetype)initWithNome:(NSString *)n {
+- (instancetype)initWithNome:(NSString *)n andPonto:(int)p
+{
     
     self = [super init];
     if (self) {
         _nome = n;
+        _pontuacao = p;
     }
     return self;
 }
 
 - (void)atualizarRecordes{
-    _pontuacao+=1;
+    //_pontuacao+=1;
+    NSLog(@"Nome = %@",_nome);
+    NSLog(@"Pontos = %i",_pontuacao);
+    
     }
 
 @end
