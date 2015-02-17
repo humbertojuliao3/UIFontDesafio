@@ -15,7 +15,12 @@
 @property Jogador *player;
 @property int rodada;
 @property int pontuacao;
+@property int jogadores;
 @property NSString *nome;
+@property NSMutableDictionary *armazena;
+
+-(void)teste;
+
 - (instancetype)init;
 - (void)aumentarSequencia;
 - (bool)verificarSequenciaInformada:(NSMutableArray *)entrada;

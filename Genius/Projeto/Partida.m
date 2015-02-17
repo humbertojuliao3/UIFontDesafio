@@ -22,6 +22,7 @@
         _sequencia = a;
         _rodada = 0;
         _pontuacao = 0;
+        _armazena= [NSMutableDictionary dictionary];
         
     }
     return self;
@@ -29,7 +30,7 @@
 
 
 - (void)aumentarSequencia {
-    NSInteger numAleatorio = (arc4random() %3) + 1;
+    NSInteger numAleatorio = (arc4random() %4) + 1;
     [_sequencia insertObject:[NSNumber numberWithInt:(int)numAleatorio] atIndex:_rodada];
     _rodada+=1;
 }
@@ -122,7 +123,7 @@
     if (a == 2)
     {
         [self limpar];
-        [self pontos];
+        [self teste];
     }
     
     if(a ==3)
@@ -147,6 +148,7 @@
     
     int a;
     NSLog(@" %d", _pontuacao);
+    [self teste];
     NSLog(@" 1 - Voltar");
     scanf("%i",&a);
     if (a == 1)
@@ -171,7 +173,7 @@
 -(void)sobre
 {
     int a;
-    NSLog(@"\nEssa versao do jogo Genius foi desenvolvido pelos programadores Guilherme Souza, Humberto Juliao, Liliane Lima e Sidney Decarte.\nPara fazerem tal tarefa utilizaram a estrutura de dados fila.\nEsssa estrutura foi escolhida, pois se adequa melhor para o jogo, ja que uma pilha, por desempilhar o ultimo elemento primeiro, iria trazer problemas para um projeto em que a ordem e fundamental e o HashTable por ser um sistema mais elaborado, seria muito potente para essa funcionalidade.");
+    NSLog(@"\nEssa versao do jogo Genius foi desenvolvido pelos programadores Guilherme Souza, Humberto Juliao, Liliane Lima e Sidney Decarte.\nPara fazerem tal tarefa utilizaram a estrutura de dados fila.\nEsssa estrutura foi escolhida, pois se adequa melhor para o jogo, ja que uma pilha, por desempilhar o ultimo elemento primeiro, iria trazer problemas para um projeto em que a ordem e fundamental e o HashTable por ser um sistema mais elaborado, seria muito potente para essa funcionalidade.\n\n TERA MUDANCAS");
     
     NSLog(@"\n 1 - Voltar");
     scanf("%i",&a);
@@ -180,6 +182,34 @@
         [self menu];
     }
 }
+
+-(void)teste
+{
+    int a;
+    NSString *muda, *vetorNome [20], *vetorPontos[20];
+    muda = [NSString stringWithFormat:@"%d",_pontuacao];
+    
+    vetorNome[1] = _nome;
+    vetorPontos[1] = muda;
+    
+    
+    
+    
+    [_armazena setObject:vetorPontos[1] forKey:vetorNome[1]];
+
+     NSString *aString = [_armazena objectForKey:vetorNome[1]];
+    NSLog(@"Pontuacao = %@", aString);
+    
+    NSLog(@"\n 1 - Voltar");
+    scanf("%i",&a);
+    if (a == 1) {
+        [self limpar];
+        [self menu];
+
+    }
+    
+}
+
 
 
 

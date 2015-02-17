@@ -14,8 +14,6 @@
 - (instancetype)initWithNome:(NSString *)n andPonto:(int)p;
 
 - (void)atualizarRecordes;
-
-
 @property NSString *nome;
 @property int pontuacao;
 

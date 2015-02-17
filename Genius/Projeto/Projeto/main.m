@@ -17,7 +17,21 @@ int main(int argc, const char * argv[]) {
         Partida *a=[[Partida alloc] init];
         
         
-         [a inicio];
+        [a inicio];
+        
+//            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//            
+//            [dict setObject:@"Foo" forKey:@"Key_1"]; // adds @"Foo"
+//            [dict setObject:@"Bar" forKey:@"Key_2"]; // adds @"Bar"
+//            
+//            [dict setObject:@"Qux" forKey:@"Key_2"]; // overwrites @"Bar"!
+//            
+//            NSString *aString = [dict objectForKey:@"Key_1"]; // @"Foo"
+//            NSString *anotherString = [dict objectForKey:@"Key_2"]; // @"Qux"
+//        NSString *yas = [dict objectForKey:@"Key_3"]; // nil
+//        
+//        NSLog(@"YAS=%@",aString);
+        
         
 //        NSLog(@"BEM VINDO AO GENIUS \n");
 //        NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
