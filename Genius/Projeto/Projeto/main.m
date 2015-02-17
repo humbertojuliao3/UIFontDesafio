@@ -16,21 +16,24 @@ int main(int argc, const char * argv[]) {
         
         Partida *a=[[Partida alloc] init];
         
-        NSLog(@"BEM VINDO AO GENIUS \n");
-        NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
-        NSString *nomeJogador;
-        char nome[50];
-        scanf("%s", nome);
-        nomeJogador = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
-
-     //  [a limpar];
-//        
+        
+         [a inicio];
+        
+//        NSLog(@"BEM VINDO AO GENIUS \n");
+//        NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
+//        NSString *nomeJogador;
+//        char nome[50];
+//        scanf("%s", nome);
+//        nomeJogador = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
+//
+//       [a limpar];
+//
 //        NSLog(@"1 - INICIAR JOGO");
 //        NSLog(@"2 - PONTUACAO");
 //        scanf("%i",&escolha);
         
         
-        [a menu];
+       
         
         
        // [a jogo];

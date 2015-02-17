@@ -93,6 +93,7 @@
     _rodada = 0;
     [_sequencia removeAllObjects];
     [NSThread sleepForTimeInterval:1.0];
+    [self limpar];
     [self menu];
 }
 
@@ -105,8 +106,10 @@
 -(void)menu
 {
     int a;
-    NSLog(@"1 - INICIAR JOGO");
-    NSLog(@"2 - PONTUACAO");
+    NSLog(@"1 - Iniciar o jogo");
+    NSLog(@"2 - Pontuacao");
+    NSLog(@"3 - Mudar Jogador");
+    NSLog(@"4 - Sobre");
     scanf("%i",&a);
     
     if (a == 1)
@@ -122,6 +125,17 @@
         [self pontos];
     }
     
+    if(a ==3)
+    {
+        [self limpar];
+        [self inicio];
+    }
+    
+    if(a ==4)
+    {
+        [self limpar];
+        [self sobre];
+    }
     
 }
 
@@ -137,6 +151,30 @@
     }
 }
 
+-(void)inicio
+{
+    NSLog(@"BEM VINDO AO GENIUS \n");
+    NSLog(@"Para iniciar o jogo, insira o nome do Jogador:");
+   // NSString *nomeJogador;
+    char nome[50];
+    scanf("%s", nome);
+    _nome = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
+   // NSLog(@"Nome e: %@",_nome);
+    [self menu];
+}
+
+-(void)sobre
+{
+    int a;
+    NSLog(@"\nEssa versao do jogo Genius foi desenvolvido pelos programadores Guilherme Souza, Humberto Juliao, Liliane Lima e Sidney Decarte.\nPara fazerem tal tarefa utilizaram a estrutura de dados fila.\nEsssa estrutura foi escolhida, pois se adequa melhor para o jogo, ja que uma pilha, por desempilhar o ultimo elemento primeiro, iria trazer problemas para um projeto em que a ordem e fundamental e o HashTable por ser um sistema mais elaborado, seria muito potente para essa funcionalidade.");
+    
+    NSLog(@"\n 1 - Voltar");
+    scanf("%i",&a);
+    if (a == 1) {
+        [self limpar];
+        [self menu];
+    }
+}
 
 
 

@@ -15,6 +15,7 @@
 @property Jogador *player;
 @property int rodada;
 @property int pontuacao;
+@property NSString *nome;
 - (instancetype)init;
 - (void)aumentarSequencia;
 - (bool)verificarSequenciaInformada:(NSMutableArray *)entrada;
@@ -23,4 +24,6 @@
 -(void)limpar;
 -(void)menu;
 -(void)pontos;
+-(void)inicio;
+-(void)sobre;
 @end
