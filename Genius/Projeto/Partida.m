@@ -7,6 +7,7 @@
 //
 
 #import "Partida.h"
+#import "Jogador.h"
 #include <stdlib.h>
 
 @implementation Partida
@@ -20,6 +21,8 @@
         NSMutableArray *a=[[NSMutableArray alloc] initWithCapacity:200];
         _sequencia = a;
         _rodada = 0;
+        _pontuacao = 0;
+        
     }
     return self;
 }
@@ -86,6 +89,9 @@
     }
     NSLog(@"Você errou!!!");
     NSLog(@"Fim de Jogo");
+    _pontuacao = _rodada * 100;
+    _rodada = 0;
+    [_sequencia removeAllObjects];
     [NSThread sleepForTimeInterval:1.0];
     [self menu];
 }
@@ -122,7 +128,7 @@
 -(void)pontos
 {
     int a;
-    NSLog(@"%d",_rodada * 100);
+    NSLog(@" %d", _pontuacao);
     NSLog(@" 1 - Voltar");
     scanf("%i",&a);
     if (a == 1) {

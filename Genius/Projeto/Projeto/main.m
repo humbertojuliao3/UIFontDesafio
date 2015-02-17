@@ -13,7 +13,6 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        int escolha;
         
         Partida *a=[[Partida alloc] init];
         
@@ -32,7 +31,7 @@ int main(int argc, const char * argv[]) {
         
         
         [a menu];
-        [a.player setNome:nomeJogador];
+        
         
        // [a jogo];
         
