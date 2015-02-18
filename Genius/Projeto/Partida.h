@@ -22,6 +22,7 @@
 @property NSMutableArray *nickname;
 @property NSMutableDictionary *ordenar;
 @property NSString *frase1;
+@property int auxiliar;
 
 -(void)teste;
 

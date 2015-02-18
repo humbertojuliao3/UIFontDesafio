@@ -29,6 +29,7 @@
         _posicao = 0;
         _ordenar = [[NSMutableDictionary alloc] initWithCapacity:1000];
         _frase1 = @"";
+        _auxiliar = 300;
     }
     return self;
 }
@@ -38,6 +39,7 @@
     NSInteger numAleatorio = (arc4random() %4) + 1;
     [_sequencia insertObject:[NSNumber numberWithInt:(int)numAleatorio] atIndex:_rodada];
     _rodada+=1;
+    _auxiliar--;
 }
 
 - (NSMutableArray *)exibirSequencia {
@@ -106,7 +108,7 @@
     //[_ponto insertObject: [NSNumber numberWithInt:(int)_pontuacao]atIndex: _posicao];
     [_ponto insertObject: muda atIndex: _posicao];
     
-    DoisDigitosPonto = _pontuacao/100;
+    DoisDigitosPonto = (_pontuacao/100);
     
     _frase1 = @"Nome: ";
     frase2 = _nickname[_posicao];
@@ -117,11 +119,10 @@
     _frase1 = [_frase1 stringByAppendingString:frase4];
 
    // NSLog(@"Teste = %@",_frase1);
+    
+    //String_DoisDigitosPonto = [NSString stringWithFormat:@"%d",DoisDigitosPonto];
+    String_DoisDigitosPonto = [NSString stringWithFormat:@"%d",_auxiliar];
 
-    
-    
-    
-    String_DoisDigitosPonto = [NSString stringWithFormat:@"%d",DoisDigitosPonto];
     
     [_ordenar setObject:_frase1  forKey:String_DoisDigitosPonto];
     _posicao ++;
@@ -152,6 +153,7 @@
         switch (a){
             case 1:
                 [self limpar];
+                _auxiliar =300;
                 NSLog(@"START");
                 [self jogo];
                 break;
@@ -205,7 +207,7 @@
 //        i++;
 //    }while (i < _posicao);
     
-    NSLog(@"%@",_ordenar);
+    NSLog(@"Registro: %@",_ordenar);
     int a;
     NSLog(@" 1 - Voltar");
     scanf("%i",&a);
