@@ -26,7 +26,6 @@
     //_pontuacao+=1;
     NSLog(@"Nome = %@",_nome);
     NSLog(@"Pontos = %i",_pontuacao);
-    
     }
 
 @end

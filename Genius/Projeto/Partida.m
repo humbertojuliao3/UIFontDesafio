@@ -23,9 +23,9 @@
         _rodada = 0;
         _pontuacao = 0;
         NSMutableArray *b = [[NSMutableArray alloc] initWithCapacity:200];
-        _armazena = b;
+        _ponto = b;
         NSMutableArray *c = [[NSMutableArray alloc] initWithCapacity:200];
-        _jogador = c;
+        _nickname = c;
         _posicao = 0;
     }
     return self;
@@ -95,9 +95,8 @@
     NSLog(@"Fim de Jogo");
     _pontuacao = _rodada * 100;
     [self inicio];
-    [_jogador insertObject: _nome atIndex:_posicao];
-    [_jogador insertObject: [NSNumber numberWithInt:(int)_pontuacao]atIndex:_posicao];
-    [_armazena insertObject: _jogador atIndex: _posicao];
+    [_nickname insertObject: _nome atIndex: _posicao];
+    [_ponto insertObject: [NSNumber numberWithInt:(int)_pontuacao]atIndex: _posicao];
     _posicao ++;
     _rodada = 0;
     [_sequencia removeAllObjects];
@@ -177,13 +176,13 @@
 
 -(void)pontos
 {
-    
-   _player = [[Jogador alloc] initWithNome:_nome andPonto:_pontuacao];
-    [_player atualizarRecordes];
+    int i = 0;
+    do{
+        NSLog(@"Nome: %@ - Pontuacao: %@", _nickname[i], _ponto[i]);
+        i++;
+    }while (i < _posicao);
     
     int a;
-    NSLog(@" %@", _armazena);
-    [self teste];
     NSLog(@" 1 - Voltar");
     scanf("%i",&a);
     if (a == 1)

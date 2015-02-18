@@ -18,8 +18,8 @@
 @property int jogadores;
 @property int posicao;
 @property NSString *nome;
-@property NSMutableArray *armazena;
-@property NSMutableArray *jogador;
+@property NSMutableArray *ponto;
+@property NSMutableArray *nickname;
 
 -(void)teste;
 
