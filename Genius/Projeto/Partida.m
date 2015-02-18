@@ -27,6 +27,8 @@
         NSMutableArray *c = [[NSMutableArray alloc] initWithCapacity:200];
         _nickname = c;
         _posicao = 0;
+        _ordenar = [[NSMutableDictionary alloc] initWithCapacity:1000];
+        _frase1 = @"";
     }
     return self;
 }
@@ -63,6 +65,10 @@
  
     NSMutableArray *resp=[[NSMutableArray alloc] initWithCapacity:200];
     
+    int DoisDigitosPonto;
+    NSString *String_DoisDigitosPonto, *muda;
+    NSString *frase2, *frase3, *frase4;
+    
     bool isJogo=true;
    
     for(;isJogo==true;){
@@ -94,11 +100,33 @@
     NSLog(@"Você errou!!!");
     NSLog(@"Fim de Jogo");
     _pontuacao = _rodada * 100;
+    muda = [NSString stringWithFormat:@"%d",_pontuacao];
     [self inicio];
     [_nickname insertObject: _nome atIndex: _posicao];
-    [_ponto insertObject: [NSNumber numberWithInt:(int)_pontuacao]atIndex: _posicao];
+    //[_ponto insertObject: [NSNumber numberWithInt:(int)_pontuacao]atIndex: _posicao];
+    [_ponto insertObject: muda atIndex: _posicao];
+    
+    DoisDigitosPonto = _pontuacao/100;
+    
+    _frase1 = @"Nome: ";
+    frase2 = _nickname[_posicao];
+    frase3 = @" - Pontos: ";
+    frase4 =  _ponto[_posicao];
+    _frase1 = [_frase1 stringByAppendingString:frase2];
+    _frase1 = [_frase1 stringByAppendingString:frase3];
+    _frase1 = [_frase1 stringByAppendingString:frase4];
+
+   // NSLog(@"Teste = %@",_frase1);
+
+    
+    
+    
+    String_DoisDigitosPonto = [NSString stringWithFormat:@"%d",DoisDigitosPonto];
+    
+    [_ordenar setObject:_frase1  forKey:String_DoisDigitosPonto];
     _posicao ++;
     _rodada = 0;
+    
     [_sequencia removeAllObjects];
     [NSThread sleepForTimeInterval:1.0];
     [self limpar];
@@ -118,8 +146,7 @@
     do{
         NSLog(@"1 - Iniciar o jogo");
         NSLog(@"2 - Pontuacao");
-        NSLog(@"3 - Mudar Jogador");
-        NSLog(@"4 - Sobre");
+        NSLog(@"3 - Sobre");
         NSLog(@"0 - Sair");
         scanf("%i",&a);
         switch (a){
@@ -133,10 +160,6 @@
                 [self pontos];
                 break;
             case 3:
-                [self limpar];
-                [self inicio];
-                break;
-            case 4:
                 [self limpar];
                 [self sobre];
                 break;
@@ -176,12 +199,13 @@
 
 -(void)pontos
 {
-    int i = 0;
-    do{
-        NSLog(@"Nome: %@ - Pontuacao: %@", _nickname[i], _ponto[i]);
-        i++;
-    }while (i < _posicao);
+//    int i = 0;
+//    do{
+//        NSLog(@"Nome: %@ - Pontuacao: %@", _nickname[i], _ponto[i]);
+//        i++;
+//    }while (i < _posicao);
     
+    NSLog(@"%@",_ordenar);
     int a;
     NSLog(@" 1 - Voltar");
     scanf("%i",&a);

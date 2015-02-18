@@ -20,6 +20,8 @@
 @property NSString *nome;
 @property NSMutableArray *ponto;
 @property NSMutableArray *nickname;
+@property NSMutableDictionary *ordenar;
+@property NSString *frase1;
 
 -(void)teste;
 
