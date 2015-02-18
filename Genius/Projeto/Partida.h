@@ -23,6 +23,8 @@
 @property NSMutableDictionary *ordenar;
 @property NSString *frase1;
 @property int auxiliar;
+@property int qtdJogadas;
+@property int melhorPontuacao;
 
 -(void)teste;
 

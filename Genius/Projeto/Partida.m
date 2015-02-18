@@ -30,6 +30,8 @@
         _ordenar = [[NSMutableDictionary alloc] initWithCapacity:1000];
         _frase1 = @"";
         _auxiliar = 300;
+        _qtdJogadas = 0;
+        _melhorPontuacao = 0;
     }
     return self;
 }
@@ -72,7 +74,6 @@
     NSString *frase2, *frase3, *frase4;
     
     bool isJogo=true;
-   
     for(;isJogo==true;){
       
         [self aumentarSequencia];
@@ -102,36 +103,38 @@
     NSLog(@"Você errou!!!");
     NSLog(@"Fim de Jogo");
     _pontuacao = _rodada * 100;
-    muda = [NSString stringWithFormat:@"%d",_pontuacao];
-    [self inicio];
-    [_nickname insertObject: _nome atIndex: _posicao];
-    //[_ponto insertObject: [NSNumber numberWithInt:(int)_pontuacao]atIndex: _posicao];
-    [_ponto insertObject: muda atIndex: _posicao];
     
-    DoisDigitosPonto = (_pontuacao/100);
-    
-    _frase1 = @"Nome: ";
-    frase2 = _nickname[_posicao];
-    frase3 = @" - Pontos: ";
-    frase4 =  _ponto[_posicao];
-    _frase1 = [_frase1 stringByAppendingString:frase2];
-    _frase1 = [_frase1 stringByAppendingString:frase3];
-    _frase1 = [_frase1 stringByAppendingString:frase4];
+    if (_pontuacao > _melhorPontuacao) {
+        _melhorPontuacao = _pontuacao;
+        muda = [NSString stringWithFormat:@"%d",_melhorPontuacao];
+        [_ordenar removeAllObjects];
+        [_nickname insertObject: _nome atIndex: 0];
+        //[_ponto insertObject: [NSNumber numberWithInt:(int)_pontuacao]atIndex: _posicao];
+        [_ponto insertObject: muda atIndex: 0];
+        
+        DoisDigitosPonto = (_pontuacao/100);
+        
+        _frase1 = @"Nome: ";
+        frase2 = _nickname[0];
+        frase3 = @" - Pontos: ";
+        frase4 =  _ponto[0];
+        _frase1 = [_frase1 stringByAppendingString:frase2];
+        _frase1 = [_frase1 stringByAppendingString:frase3];
+        _frase1 = [_frase1 stringByAppendingString:frase4];
+        String_DoisDigitosPonto = [NSString stringWithFormat:@"%d",_auxiliar];
+        [_ordenar setObject:_frase1  forKey:String_DoisDigitosPonto];
+    }
 
    // NSLog(@"Teste = %@",_frase1);
     
     //String_DoisDigitosPonto = [NSString stringWithFormat:@"%d",DoisDigitosPonto];
-    String_DoisDigitosPonto = [NSString stringWithFormat:@"%d",_auxiliar];
-
     
-    [_ordenar setObject:_frase1  forKey:String_DoisDigitosPonto];
-    _posicao ++;
     _rodada = 0;
+    _qtdJogadas ++;
     
     [_sequencia removeAllObjects];
     [NSThread sleepForTimeInterval:1.0];
     [self limpar];
-    [self menu];
 }
 
 -(void)limpar{
@@ -207,15 +210,16 @@
 //        i++;
 //    }while (i < _posicao);
     
-    NSLog(@"Registro: %@",_ordenar);
+    NSLog(@"Registro: %@ - Quantidade de vezes que jogou: %d",_ordenar, _qtdJogadas);
     int a;
-    NSLog(@" 1 - Voltar");
-    scanf("%i",&a);
-    if (a == 1)
-    {
-        [self limpar];
-        [self menu];
-    }
+    do{
+        NSLog(@" 1 - Voltar");
+        scanf("%i",&a);
+        if (a != 1) {
+            NSLog(@"Digite 1 para voltar");
+        }
+    }while (a != 1);
+    [self limpar];
 }
 
 -(NSString *)inicio
@@ -225,6 +229,7 @@
     char nome[50];
     scanf("%s", nome);
     _nome = [NSString stringWithCString:nome encoding:NSUTF8StringEncoding];
+    
    // NSLog(@"Nome e: %@",_nome);
     return _nome;
 }
@@ -235,11 +240,14 @@
     NSLog(@"\nEssa versao do jogo Genius foi desenvolvido pelos programadores Guilherme Souza, Humberto Juliao, Liliane Lima e Sidney Decarte.\nPara fazerem tal tarefa utilizaram a estrutura de dados fila.\nEsssa estrutura foi escolhida, pois se adequa melhor para o jogo, ja que uma pilha, por desempilhar o ultimo elemento primeiro, iria trazer problemas para um projeto em que a ordem e fundamental e o HashTable por ser um sistema mais elaborado, seria muito potente para essa funcionalidade.\n\n TERA MUDANCAS");
     
     NSLog(@"\n 1 - Voltar");
-    scanf("%i",&a);
-    if (a == 1) {
-        [self limpar];
-        [self menu];
-    }
+    do{
+        NSLog(@" 1 - Voltar");
+        scanf("%i",&a);
+        if (a != 1) {
+            NSLog(@"Digite 1 para voltar");
+        }
+    }while (a != 1);
+    [self limpar];
 }
 
 -(void)teste
